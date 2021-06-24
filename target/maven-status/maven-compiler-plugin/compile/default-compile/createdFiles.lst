@@ -1,0 +1,6 @@
+org/example/HelloFiveConfiguration.class
+org/example/HelloFiveApplication.class
+org/example/db/entity/Order.class
+org/example/resources/OrderResource.class
+org/example/db/dao/OrderDAO.class
+org/example/HelloFiveApplication$1.class

@@ -1,0 +1,4 @@
+org.example
+org.example.db.dao
+org.example.db.entity
+org.example.resources
