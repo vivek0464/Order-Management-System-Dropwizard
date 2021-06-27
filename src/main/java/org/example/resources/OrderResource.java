@@ -2,7 +2,7 @@ package org.example.resources;
 
 import io.dropwizard.hibernate.UnitOfWork;
 import io.dropwizard.jersey.params.IntParam;
-import io.dropwizard.jersey.params.LongParam;
+import org.example.api.KafkaProducerService;
 import org.example.db.dao.OrderDAO;
 import org.example.db.entity.Order;
 import org.example.request.OrderRequest;
@@ -60,7 +60,13 @@ public class OrderResource {
                     .status(422).build();
 
         Order orderCreated = orderDAO.create(order.get());
-        return Response.accepted(orderCreated)
+
+        //**
+        KafkaProducerService kafkaProducerService = new KafkaProducerService();
+        String status = kafkaProducerService.sendMessageToTopic("Orders", orderCreated.toString());
+        //**
+
+        return Response.ok(orderCreated)
                 .status(200).build();
     }
 

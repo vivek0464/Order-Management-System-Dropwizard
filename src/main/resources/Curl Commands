@@ -1,0 +1,4 @@
+GET orders -> curl http://localhost:8080/orders
+
+POST order -> curl -d '{"uid":20,"pid":200,"quantity":2}' -H "Content-Type: application/json" -X POST http://localhost:8080/orders
+

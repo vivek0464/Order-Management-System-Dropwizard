@@ -92,4 +92,10 @@ public class Order {
         return Objects.hash(oid, uid, pid, quantity);
     }
 
+    @Override
+    public String toString(){
+        return "Order created: oid = " + Integer.toString(oid) + ", uid = " + Integer.toString(uid) + ", " + "pid = " +
+                Integer.toString(pid) + ", quantity = " + Integer.toString(quantity);
+    }
+
 }
